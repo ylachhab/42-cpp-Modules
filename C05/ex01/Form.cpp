@@ -5,11 +5,11 @@ Form::Form() : name("Default"), gradeEx(100), gradeSign(15), sign(false) {
 
 Form::Form(const Form& obj) : name(obj.name), gradeEx(obj.gradeEx),
 			gradeSign(obj.gradeSign), sign(obj.sign) {
-	*this = obj;
 }
 
 Form& Form::operator=(const Form& obj) {
-	(void)obj;
+	if (this != &obj)
+		this->sign = obj.sign;
 	return *this;
 }
 

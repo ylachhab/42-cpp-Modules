@@ -1,5 +1,6 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -7,11 +8,16 @@
 int main() {
 	try 
 	{
+		Intern t;
+		AForm *s;
 		Bureaucrat obj;
-		ShrubberyCreationForm s("shrubbery");
-		s.beSigned(obj);
-		s.execute(obj);
-		obj.executeForm(s);
+		s = t.makeForm("shrubbery crelation", "Bender");
+		if (!s)
+			std::exit(1);
+		s->beSigned(obj);
+		s->execute(obj);
+		obj.executeForm(*s);
+		delete s;
 	}
 	catch (std::exception& e)
 	{

@@ -1,4 +1,4 @@
-NAME = AForm
+NAME = Intern
 
 CXX = c++
 
@@ -13,7 +13,8 @@ SRC =	main.cpp \
 		AForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 OBJ = $(addprefix obj/, $(SRC:.cpp=.o))
 
@@ -22,7 +23,7 @@ all : $(NAME)
 $(OBJF) :
 	mkdir -p $(OBJF)
 
-$(OBJF)/%.o : %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp | $(OBJF)
+$(OBJF)/%.o : %.cpp Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp | $(OBJF)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)

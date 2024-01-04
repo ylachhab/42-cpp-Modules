@@ -1,10 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 45, 72){
-	 
+RobotomyRequestForm::RobotomyRequestForm() {
+
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("Robotomy", 45, 72){
+RobotomyRequestForm::RobotomyRequestForm(std::string target){
 	this->target = target;
 }
 
@@ -23,9 +23,9 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	if (this->getSign() == true && executor.getGrade() <= this->getGradeEx())
+	if (this->getSign() == true && executor.getGrade() <= this->getGradeSign()
+		&& this->getGradeSign() <= 72 && this->getGradeEx() <= 45)
 	{
-		std::srand(std::time(0));
 		if (std::rand() % 2 == 0)
 			std::cout << this->target << " has been robotomized successfully" << std::endl;
 		else

@@ -16,7 +16,7 @@ class AForm {
 		AForm(const AForm& obj);
 		AForm(const std::string &name, int gradeEx, int gradeSign);
 		AForm& operator=(const AForm& obj);
-		~AForm();
+		virtual ~AForm();
 		class GradeTooHighException;
 		class GradeTooLowException;
 		const std::string getName() const;

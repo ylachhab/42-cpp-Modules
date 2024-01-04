@@ -1,10 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() :AForm("Shrubbery", 137, 145) {
-	this->target = "default";
+ShrubberyCreationForm::ShrubberyCreationForm() {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery", 137, 145){
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) {
 	this->target = target;
 }
 
@@ -22,12 +21,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (this->getSign() == true && executor.getGrade() <= this->getGradeEx())
+	if (this->getSign() == true && executor.getGrade() <= this->getGradeSign()
+		&& this->getGradeSign() <= 145 && this->getGradeEx() <= 137)
 	{
 		std::ofstream file(target + "_shrubbery");
 		if (file.is_open())
 		{
-			file << "        _-_\n"
+			file << "       _-_\n"
 				 << "     /~~   ~~\\ \n"
 				 << "  /~~         ~~\\ \n"
 				 << " {               }\n"
@@ -35,8 +35,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 				 << "    ~  \\ //  ~\n"
 				 << " _- -   | | _- _\n"
 				 << "   _ -  | |   -_\n"
-				 << "       // \\\n"
-				 << "__-__--     --__-__" << std::endl;
+				 << "       // \\" << std::endl;
 			file.close();
 		}
 		else

@@ -17,7 +17,7 @@ int main() {
 	}
 	std::cout << "--------------------------" << std::endl;
 	try {
-		Bureaucrat obj2("nah", 2);
+		Bureaucrat obj2("nah", -2);
 		std::cout << "name : " << obj2.getName() << ", grade : " << obj2.getGrade() << std::endl;
 		obj2.incrementGrade();
 		std::cout << "name : " << obj2.getName() << ", grade : " << obj2.getGrade() << std::endl;

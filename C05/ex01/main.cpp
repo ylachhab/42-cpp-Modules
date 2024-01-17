@@ -18,6 +18,7 @@ int main() {
 	try {
 		Bureaucrat obj("name", 52);
 		Form F("jesse", 40, 5);
+		std::cout << F << std::endl;
 		F.beSigned(obj);
 		obj.signForm(F);
 	}

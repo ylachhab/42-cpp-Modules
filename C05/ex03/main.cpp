@@ -11,7 +11,7 @@ int main() {
 		Intern t;
 		AForm *s;
 		Bureaucrat obj;
-		s = t.makeForm("shrubbery crelation", "Bender");
+		s = t.makeForm("shrubbery creation", "jon");
 		if (!s)
 			std::exit(1);
 		s->beSigned(obj);
@@ -25,11 +25,16 @@ int main() {
 	}
 	try 
 	{
+		Intern t;
+		AForm *s;
 		Bureaucrat obj;
-		RobotomyRequestForm s("robotomy");
-		s.beSigned(obj);
-		s.execute(obj);
-		obj.executeForm(s);
+		s = t.makeForm("robotomy request", "bob");
+		if (!s)
+			std::exit(1);
+		s->beSigned(obj);
+		s->execute(obj);
+		obj.executeForm(*s);
+		delete s;
 	}
 	catch (std::exception& e)
 	{
@@ -37,11 +42,16 @@ int main() {
 	}
 	try 
 	{
+		Intern t;
+		AForm *s;
 		Bureaucrat obj;
-		PresidentialPardonForm s("president");
-		s.beSigned(obj);
-		s.execute(obj);
-		obj.executeForm(s);
+		s = t.makeForm("presidential pardonb", "sara");
+		if (!s)
+			std::exit(1);
+		s->beSigned(obj);
+		s->execute(obj);
+		obj.executeForm(*s);
+		delete s;
 	}
 	catch (std::exception& e)
 	{

@@ -23,7 +23,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& obj) {
 }
 
 Bureaucrat::~Bureaucrat(){
-
 }
 
 std::string Bureaucrat::getName() const {

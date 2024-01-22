@@ -57,3 +57,11 @@ unsigned int Span::longestSpan(){
 		throw std::exception();
 	return (this->max - this->min);
 }
+
+void Span::addNbrToSpan(std::vector<int>::iterator &begin, std::vector<int>::iterator &end){
+	this->vec.insert(vec.begin() + 3, begin, end);
+}
+
+int Span::getNbr(int i) const{
+	return vec[i];
+}

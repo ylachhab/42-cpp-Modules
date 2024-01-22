@@ -1,13 +1,5 @@
 #include "iter.hpp"
 
-void print(std::string& arr){
-	std::cout << arr << std::endl;
-}
-
-void printint(int& arr){
-	std::cout << arr << std::endl;
-}
-
 int main(){
 	const std::string arr[] = {"hello", "hi", "world"};
 	int len = sizeof(arr) / sizeof(std::string);

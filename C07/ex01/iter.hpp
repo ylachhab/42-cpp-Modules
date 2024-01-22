@@ -3,9 +3,11 @@
 
 #include <iostream>
 
-template <typename T, typename M> void iter(T *arr, int l, M f)
+template <typename T, typename M> void iter(T *arr, unsigned int l, M f)
 {
-	for (int i = 0; i < l; i++)
+	if (!arr || !f)
+		return ;
+	for (unsigned int i = 0; i < l; i++)
 		f(arr[i]);
 }
 

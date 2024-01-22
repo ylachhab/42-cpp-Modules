@@ -32,16 +32,23 @@ void identify(Base& p) {
 		(void)a;
 		std::cout << "The type of the object pointed is A" << std::endl;
 	}
-	catch (std::exception &e) {
+	catch (std::exception &e) 
+	{
 		try {
 			B& b = dynamic_cast<B&>(p);
 			(void)b;
 			std::cout << "The type of the object pointed is B" << std::endl;
 		}
 		catch (std::exception &e) {
-			C& c = dynamic_cast<C&>(p);
-			(void)c;
-			std::cout << "The type of the object pointed is C" << std::endl;
+			try {
+				C& c = dynamic_cast<C&>(p);
+				(void)c;
+				std::cout << "The type of the object pointed is C" << std::endl;
+			}
+			catch (std::exception &e)
+			{
+				std::cout << e.what() << std::endl;
+			}
 		}
 	}
 }
@@ -54,13 +61,12 @@ int main() {
 	delete ptr;
 
 	std::cout << "--> Reference:\n";
-	A a;
-	B b;
-	C c;
+	Base a;
+	// B b;
+	// C c;
 	identify(a);
-	identify(b);
-	identify(c);
-
+	// identify(b);
+	// identify(c);
 
 	std::cout << "--> Pointer:\n";
 	ptr = generate();

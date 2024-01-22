@@ -6,43 +6,50 @@
 template <typename T> class Array {
 	private :
 		T *str;
-		int len;
+		unsigned int len;
 	public :
 		Array(){
-			len = 5;
-			str = new T[5];
-			for (int i = 0; i < 5; i++)
-				str[i] = NULL;
+			len = 0;
+			str = 0;
 		};
 		Array(unsigned int n) {
 			this->len = n;
 			str = new T[len];
+			for (unsigned int i = 0; i < len; i++)
+				str[i] = 0;
 		};
 		Array(const Array& obj){
+			len = obj.len;
 			str = new T[obj.len];
-			for (int i = 0; i < obj.len; i++)
+			for (unsigned int i = 0; i < obj.len; i++)
 				str[i] = obj.str[i];
 		};
 		Array& operator=(const Array& obj){
 			if (str)
 				delete []str;
+			len = obj.len;
 			str = new T[obj.len];
-			for (int i = 0; i < obj.len; i++)
+			for (unsigned int i = 0; i < obj.len; i++)
 				str[i] = obj.str[i];
 			return *this;
 		};
-		T& operator[](int ind){
-			if (ind > len || ind < 0)
+		T& operator[](unsigned int ind){
+			if (ind >= len)
 				throw std::exception();
 			return str[ind];
 		};
-		void operator[](int ind) const{
-			if (ind > len || ind < 0)
+		const T& operator[](unsigned int ind) const{
+			if (ind >= len)
 				throw std::exception();
+			return str[ind];
 		};
 		int size() const{
 			return this->len;
 		};
+		~Array() {
+			if (str)
+				delete []str;
+		}
 };
 
 #endif

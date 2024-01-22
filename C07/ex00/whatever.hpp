@@ -9,7 +9,6 @@ template <typename T> void swap(T &a, T &b)
 	c = a;
 	a = b;
 	b = c;
-	std::cout << "sf ghayerha\n";
 }
 
 template <typename T> T min(T a, T b)

@@ -6,7 +6,7 @@
 /*   By: ylachhab <ylachhab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 09:20:52 by ylachhab          #+#    #+#             */
-/*   Updated: 2023/11/08 18:42:20 by ylachhab         ###   ########.fr       */
+/*   Updated: 2024/01/27 02:04:55 by ylachhab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ bool checkFile(std::string filename)
 	std::ifstream file(filename);
 	return (file.good());
 }
-
 
 std::string copyFile(std::string file)
 {

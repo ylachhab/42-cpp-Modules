@@ -8,8 +8,6 @@ class Span {
 	private :
 		std::vector<int> vec;
 		unsigned int N;
-		int max;
-		int min;
 	public :
 		Span();
 		Span(unsigned int N);
@@ -19,7 +17,7 @@ class Span {
 		void addNumber(int nbr);
 		unsigned int shortestSpan();
 		unsigned int longestSpan();
-		void addNbrToSpan(std::vector<int>::iterator &begin, std::vector<int>::iterator &end);
+		void addNbrToSpan(const std::vector<int>::iterator &begin, const std::vector<int>::iterator &end);
 		int getNbr(int i) const;
 };
 

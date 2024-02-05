@@ -1,6 +1,5 @@
 #include "BitcoinExchange.hpp"
 
-
 bool checkFile(std::string filename)
 {
 	std::ifstream file(filename);

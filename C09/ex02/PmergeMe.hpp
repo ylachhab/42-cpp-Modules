@@ -2,20 +2,27 @@
 #define PmergeMe_HPP
 
 #include <iostream>
-#include <fstream>
+#include <cmath>
 #include <string>
 #include <sstream>
-#include <stack>
+#include <vector>
 #include <algorithm>
 #include <string>
+#include <utility>
+#include <time.h>
 
 class PmergeMe {
 	private :
-		std::stack<int>stack;
+		int	tmp;
+		std::vector<int>vec;
+		std::vector<int>joh;
+		std::vector< std::pair< int, int> > p;
+		std::vector<int> main;
+		std::vector<int> pend;
 	public :
 		PmergeMe();
 		PmergeMe(const PmergeMe& obj);
-		PmergeMe(std::string& input);
+		PmergeMe(char* av[]);
 		PmergeMe& operator=(const PmergeMe& obj);
 		~PmergeMe();
 };

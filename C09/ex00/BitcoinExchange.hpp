@@ -22,4 +22,10 @@ class BitcoinExchange {
 		~BitcoinExchange();
 };
 
+void checkForma(std::ifstream &source, std::string &filename);
+int checkMonth(std::string &month, int &d);
+bool checkYear(int year);
+void comparisonValue(std::string &year, std::string &month, std::string &day,
+			std::string &value, std::map<std::string, float> _data, std::string &data);
+
 #endif

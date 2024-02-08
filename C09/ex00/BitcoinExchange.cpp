@@ -37,15 +37,6 @@ void fillMap(std::map<std::string, float> &_data) {
 	source.close();
 }
 
-bool checkWhiteSpace(std::string tmp)
-{
-	tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
-	tmp.erase(std::remove(tmp.begin(), tmp.end(), '\t'), tmp.end());
-	if (tmp.empty() || tmp == "\n")
-		return (true);
-	return (false);
-}
-
 int isNumber(std::string str)
 {
 	for (size_t j = 0; j < str.length(); j++)

@@ -20,4 +20,9 @@ class RPN {
 		~RPN();
 };
 
+int operation(int a, int b, char op);
+void printError(std::string str);
+int foundOperator(char c);
+int isNumber(std::string str);
+
 #endif
